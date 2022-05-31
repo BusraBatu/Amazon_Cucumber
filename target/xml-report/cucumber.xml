@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="101.784">
+    <testcase classname="US0002 Amazon Search" name="TC004 Book Searching" time="36.255">
+        <system-out>
+            <![CDATA[Given User navigate to the amazon homepage..................................passed
+Given User select books and search Momo.....................................passed
+When Select first product...................................................passed
+And Verify author is "Michael Ende".........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US0002 Amazon Search" name="TC005 Headphones Searching" time="24.05">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given User navigate to the amazon homepage..................................passed
+Given User search headphones................................................passed
+Then User select brand is "Sony"............................................passed
+And Verify products contain a product name "SONY WH-CH710N".................failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.AmazonSearchStepDefinition.verify_products_contain_a_product_name(AmazonSearchStepDefinition.java:56)
+	at ✽.Verify products contain a product name "SONY WH-CH710N"(file:///C:/Users/özgür/IdeaProjects/amazon/src/test/resources/features/amazonsearch.feature:15)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US0002 Amazon Search" name="TC006 Bicycle Searching" time="40.612">
+        <failure message="For input string: &quot;Add to Cart&quot;" type="java.lang.NumberFormatException">
+            <![CDATA[Given User navigate to the amazon homepage..................................passed
+Given User search bicycle...................................................passed
+Then User select price $"100" to $"200".....................................passed
+And User click third line product from the results..........................passed
+And Verify product is bicycle and price is in the range "100" to "200"......failed
+
+StackTrace:
+java.lang.NumberFormatException: For input string: "Add to Cart"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:543)
+	at stepdefinitions.AmazonSearchStepDefinition.verify_product_is_bicycle_and_price_is_in_the_range_to_(AmazonSearchStepDefinition.java:85)
+	at ✽.Verify product is bicycle and price is in the range "100" to "200"(file:///C:/Users/özgür/IdeaProjects/amazon/src/test/resources/features/amazonsearch.feature:23)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
