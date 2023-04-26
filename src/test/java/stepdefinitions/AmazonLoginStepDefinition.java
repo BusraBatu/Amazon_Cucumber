@@ -67,7 +67,7 @@ public class AmazonLoginStepDefinition {
     @Given("User search desk")
     public void user_search_desk() {
         amazonpage.searchBox.sendKeys("desk"+Keys.ENTER);
-        System.out.println("deneme");
+        System.out.println("deneme1");
     }
 
 
