@@ -4,7 +4,7 @@ Feature: US0003 Amazon Cart
     Given User navigate to the amazon homepage
 
 
-  @addcart
+  @addcart @deneme
   Scenario: TC007 Compare the prices
     Given User search desk
     When User click eighteenth product
